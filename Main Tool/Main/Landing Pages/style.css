@@ -1,0 +1,121 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(ellipse at center, hsl(309, 71%, 59%), rgb(0, 0, 0));
+    font-family: "lato", sans-serif;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    backdrop-filter: blur(1px);
+    background: rgba(129, 125, 125, 0.6);
+    /* Transparent white background */
+    padding: 20px 10px;
+    border-radius: 10px;
+    width: 600px;
+    height: auto;
+    box-shadow: 0 20px 30px rgba(37, 38, 39, 0.2);
+}
+
+.inline {
+    display: flex;
+    gap: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ebe8e8;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus::placeholder,
+input[type="password"]:focus::placeholder {
+    color: #555;
+    animation: movePlaceholder 0.5s ease-out;
+}
+
+.title {
+    text-align: center;
+}
+
+.social {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social a {
+    display: block;
+    margin-bottom: 10px;
+    /* Adds spacing between the links */
+    text-align: center;
+    color: #070808;
+    /* Change to your preferred color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: #fffdfc;
+    /* Change to your preferred hover color */
+}
+
+
+.go,
+.fb {
+    flex: 1;
+    text-align: center;
+}
+
+button {
+    margin: 10px auto;
+    /* Center the button horizontally */
+    display: block;
+    text-align: center;
+    background-color: #101010;
+    color: #fff;
+    border: 1px solid;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5d5e5f;
+}
+
+.line {
+
+    text-align: center;
+}
+
+.login-link {
+    color: #0e0e0e;
+    /* Initial color for the link (you can choose your own color) */
+    text-decoration: none;
+    /* Remove the underline by default */
+    transition: color 0.3s;
+    /* Add a smooth color transition on hover */
+
+}
+
+.login-link:hover {
+    color: #837a76;
+    /* Change the color when hovering (you can choose your own color) */
+    text-decoration: underline;
+    /* Optionally, you can add an underline on hover */
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome to TeamTracker</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="T.png">
+</head>
+
+<body>
+
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+    <div class="container">
+        <form action="" class="form" onsubmit="return validateForm()">
+            <h1 class="title">Welcome to TeamTracker</h1>
+            <h3 class="title">Where Teamwork Meets Triumphs</h3>
+            <br>
+            <label for="username">User ID</label>
+            <input type="text" placeholder="Email or UserID" id="username"><br>
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="password"><br>
+
+            <button>Login</button>
+            <div class="social">
+                <a href="signup.html" class="go">
+                    <i class="fab fa-google"></i> Sign up with Google
+                </a>
+                <a href="signup.html" class="fb">
+                    <i class="fab fa-facebook"></i> Sign up with Facebook
+                </a>
+            </div>
+
+            <h4 class="line">New Member?<a class="login-link" href="Signup.html"> Signup</a></h4>
+        </form>
+
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+          
+
+            if (username === "") {
+                alert("Please enter your email or user ID.");
+                return false;
+            }
+             if (/^\d+$/.test(username))
+            {
+                // If the input consists of only digits, it's considered a phone number and is not allowed
+                alert("Phone numbers are not allowed.");
+                return false;
+            } 
+            var emailPattern = /^\S+@\S+\.\S+$/;
+            if (!emailPattern.test(username)) {
+               
+            }else
+            {
+                //it is considered as userid
+            }
+
+           
+
+            if (password === "") {
+                alert("Please enter your password.");
+                return false;
+            }
+
+            // Password strength validation
+            var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            if (!passwordPattern.test(password)) {
+                alert("Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number.");
+                return false;
+            }
+            return true;
+        }
+        
+    </script>
+<script>
+    var crsr = document.querySelector("#cursor")
+  var blur = document.querySelector("#cursor-blur")
+  document.addEventListener("mousemove" , function(dets){
+      crsr.style.left = dets.x+"px" 
+      crsr.style.top = dets.y+"px"
+      blur.style.left = dets.x- 150 +"px" 
+      blur.style.top = dets.y- 150 +"px"
+      
+  
+  })
+  var mysql = require('mysql');
+  </script>
+</body>
+
+</html>

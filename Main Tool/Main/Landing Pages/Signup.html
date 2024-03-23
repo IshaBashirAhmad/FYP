@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome to TeamTracker</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="T.png">
+</head>
+
+<body>
+    <div class="container">
+        <form action="signup.php" method="post" class="form" onsubmit="return validateForm()">
+
+            <h1 class="title">Welcome to TeamTracker</h1>
+            <h3 class="title">Where Teamwork Meets Triumphs</h3>
+
+            <div class="form-row">
+                <div class="inline">
+                    <div class="col-md-6"> <!-- Adjust the column size for First Name -->
+                        <label for="FirstName">First Name</label>
+                        <input type="text" placeholder="First Name" id="Fname" name="FirstName">
+                    </div>
+                    <div class="col-md-6"> <!-- Adjust the column size for Last Name -->
+                        <label for="LastName">Last Name</label>
+                        <input type="text" placeholder="Last Name" id="Lname" name="LastName">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <label for="username">User ID</label>
+            <input type="text" placeholder="What should we call you?" id="username" name="username" /><br>
+            <label for="Email">Email</label>
+            <input type="text" placeholder="Email" id="email" name="Email" /><br>
+            <label for="PhoneNo">Phone Number</label>
+            <input type="text" placeholder="Phone No" id="phone" name="Phone" /><br>
+            <label for="userrole">User Role</label>
+            <input type="text" placeholder="Admin or Member" id="role" name="userrole" /><br>
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="password" name="Password" /><br>
+
+            <button type="submit">Submit</button>
+            <div class="social">
+                <a href="signup.html" class="go">
+                    <i class="fab fa-google"></i> Sign up with Google
+                </a>
+                <a href="signup.html" class="fb">
+                    <i class="fab fa-facebook"></i> Sign up with Facebook
+                </a>
+            </div>
+
+            <h4 class="line"> Already have an account?<a class="login-link" href="Login.html"> Login</a></h4>
+        </form>
+
+    </div>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("Fname").value;
+            var lastName = document.getElementById("Lname").value;
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var userrole = document.getElementById("role").value;
+            var password = document.getElementById("password").value;
+
+            // Basic required field validation
+            if (firstName === "" || lastName === "" || username === "" || email === "" || phone === "" || userrole === "" || password === "") {
+                alert("All fields are required");
+                return false;
+            }
+
+            // Email validation (simple format check)
+            var emailPattern = /^\S+@\S+\.\S+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            if (!passwordPattern.test(password)) {
+                alert("Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number.");
+                return false;
+            }
+            return true;
+        } 
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAKwCNJQ1AYmRwHi6mmSGJiWRr_pN12OO8",
+          authDomain: "teamtracker-17106.firebaseapp.com",
+          projectId: "teamtracker-17106",
+          storageBucket: "teamtracker-17106.appspot.com",
+          messagingSenderId: "783301476063",
+          appId: "1:783301476063:web:475a3ccd07d0713502b36a",
+          measurementId: "G-5EBQNXCXBV"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
+</body>
+
+</html>
